@@ -8,6 +8,6 @@ public class BomController {
     @RequestMapping({"/bom"})///bom{id}
     String bom()
     {
-        return "bom";
+        return "bomdetail";
     }
 }

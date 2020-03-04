@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ItemController {
 
-    @RequestMapping({"/my_items"})
+    @RequestMapping({"","/","/item"})
     String firstPage()
     {
-        return "my_items";
+        return "itemslistpage";
     }
 }
