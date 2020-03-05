@@ -16,5 +16,8 @@ public class Item {
     @Column(name = "item_name")
     String name;
 
+    @Column(name = "description")
+    String description;
+
     //todo add list of boms
 }
