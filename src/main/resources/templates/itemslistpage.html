@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-todo add list of items
+<table>
+    <thead>
+    <tr>
+        <th> ID </th>
+        <th> Name </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${items.empty}">
+        <td colspan="2"> No items available </td>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td><span th:text="${item.id}"> Id </span></td>
+        <td><span th:text="${item.name}"> Name </span></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
