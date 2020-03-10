@@ -49,14 +49,26 @@ public class ItemController {
     }
 
     @RequestMapping("/item/new")
-    public String newRecipe(Model model){
+    public String newItem(Model model){
         model.addAttribute("item", new Item());
         return "newitem";
     }
     @PostMapping("item")
     public String saveOrUpdate(@ModelAttribute Item item){
         Item savedItem = (Item) itemService.save(item);
-
         return "redirect:/item/" + savedItem.getId();
+    }
+
+    @RequestMapping("/item/update/{id}")
+    public String updateItem(@PathVariable String id, Model model){
+        Optional<Item> optional = itemService.findById(Long.valueOf(id));
+        if (optional.isPresent()) {
+            Item item = optional.get();
+            model.addAttribute("item", item);
+            return "newitem";
+        }
+        else {
+            return "notfound";
+        }
     }
 }
