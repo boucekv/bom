@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<!--/*@thymesVar id="item" type="com.example.bom.Data.Item"*/-->
+<form  th:object="${item}" th:action="@{/item/}"  method="post">
 
+    id/name/description
+    <input type="hidden" class="form-control" th:field="*{id}"/>
+    <input type="text" class="form-control" th:field="*{name}"/>
+    <input type="text" class="form-control" th:field="*{description}"/>
+    <input type="submit" />
+</form>
+<!--button type="submit" class="btn btn-primary">Submit</button-->
 </body>
 </html>
