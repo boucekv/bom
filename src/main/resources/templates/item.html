@@ -5,8 +5,10 @@
     <title>Show item</title>
 </head>
 <body>
+<!--/*@thymesVar id="my_item" type="com.example.bom.Data.Item"*/-->
 <h1>Item</h1>
 <h1 th:text="${my_item.id}">ID</h1>
 <h1 th:text="${my_item.name}">name</h1>
+<h1 th:text="${my_item.description}">description</h1>
 </body>
 </html>

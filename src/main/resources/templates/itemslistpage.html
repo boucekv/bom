@@ -32,24 +32,17 @@
                             <thead class="thead-inverse">
                             <tr>
                                 <th>ID</th>
+                                <th>name</th>
                                 <th>Description</th>
                                 <th>View</th>
+                                <th>Update</th>
                             </tr>
                             </thead>
-                            <tr th:remove="all">
-                                <td>123</td>
-                                <td>Tasty Goodnees 1</td>
-                                <td><a href="#">View</a></td>
-                            </tr>
-                            <tr th:remove="all">
-                                <td>12333</td>
-                                <td>Tasty Goodnees 2</td>
-                                <td><a href="#">View</a></td>
-                            </tr>
                             <tr th:each="item : ${items}">
                                 <!--/*@thymesVar id="item" type="com.example.bom.Data.Item"*/-->
                                 <td th:text="${item.id}">1</td>
                                 <td th:text="${item.name}">First item</td>
+                                <td th:text="${item.description}">description</td>
                                 <td><a href="#" th:href="@{'/item/' + ${item.id}}">View</a></td>
                                 <td><a href="#" th:href="@{'/item/update/' + ${item.id}}">Update</a></td>
                             </tr>
