@@ -37,6 +37,7 @@
                                 <th>name</th>
                                 <th>Description</th>
                                 <th>View</th>
+                                <th>Bom</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -47,6 +48,7 @@
                                 <td th:text="${item.name}">First item</td>
                                 <td th:text="${item.description}">description</td>
                                 <td><a href="#" th:href="@{'/item/' + ${item.id}}">View</a></td>
+                                <td><a href="#" th:href="@{'/bom/' + ${item.id}}">Bom</a></td>
                                 <td><a href="#" th:href="@{'/item/update/' + ${item.id}}">Update</a></td>
                                 <td><a href="#" th:href="@{'/item/delete/' + ${item.id}}">X</a></td>
                             </tr>

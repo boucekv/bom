@@ -2,6 +2,8 @@ package com.example.bom.Data;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "my_item")
@@ -19,5 +21,6 @@ public class Item {
     @Column(name = "description")
     String description;
 
-    //todo add list of boms
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parent")
+    List<Bom> boms = new ArrayList<>();
 }

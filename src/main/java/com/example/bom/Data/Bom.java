@@ -2,6 +2,7 @@ package com.example.bom.Data;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "my_bom")
@@ -19,7 +20,10 @@ public class Bom {
     @Column(name = "quantity")
     Integer quantity;
 
-    //todo add parent id
-    //todo add child id
-}
+    @ManyToOne
+    Item parent;
+
+    @ManyToOne
+    Item child;
+   }
 
