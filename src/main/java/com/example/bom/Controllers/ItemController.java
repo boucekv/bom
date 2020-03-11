@@ -71,4 +71,12 @@ public class ItemController {
             return "notfound";
         }
     }
+
+    @RequestMapping("/item/delete/{id}")
+    public String deleteItem(@PathVariable String id, Model model){
+        itemService.deleteById(Long.valueOf(id));
+        return "redirect:/";
+    }
+
+
 }
