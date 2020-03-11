@@ -25,9 +25,11 @@
 
                 <div class="panel-heading">
                     <h1 class="panel-title">My items!</h1>
+                    <td><a href="#" th:href="@{'/item/new'}"> New</a></td>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive" th:if="${not #lists.isEmpty(items)}">
+
                         <table class="table table-hover ">
                             <thead class="thead-inverse">
                             <tr>
